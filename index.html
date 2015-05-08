@@ -10,10 +10,8 @@
 <input type="text" ng-model="select2" />
 <select ui-select2="select2Options" ng-model="select2" data-placeholder="Pick a number">
 	<optgroup data-ng-repeat="group in calculationPreview | orderBy: group.name" label="{{group.name}}">
-	    <option data-ng-repeat="reportType in group.reportTypes | orderBy: 'sortOrder'"
-	            value="{{reportType.name}}"
-	            data-group="{{group.name}}">
-	        {{reportType.name}}
+	    <option data-ng-repeat="reportType in group.reportTypes" value="{{reportType.name}}"
+	            data-group="{{group.name}}" ng-bind="reportType.name">
 	    </option>
 	</optgroup>
 </select>
